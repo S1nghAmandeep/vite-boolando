@@ -41,9 +41,6 @@ footer {
     background-color: $footer-bg-colour;
     height: 110px;
     width: 100%;
-    /* position: sticky;
-    z-index: 2000;
-    bottom: 0;*/
 }
 
 .footer-row {
@@ -52,8 +49,6 @@ footer {
 
 .col-6 {
     flex-basis: calc((100% / 12) * 6);
-    /* flex-basis: calc((100% * 2) / 12); */
-    /* border: 1px dashed black; */
 }
 
 .footer-border {
