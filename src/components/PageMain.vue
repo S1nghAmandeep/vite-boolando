@@ -137,7 +137,6 @@ export default {
 
 .col--4 {
     flex-basis: calc((100% / 12) * 4);
-    /* border: 1px dashed black; */
 }
 
 .top-image {
@@ -146,16 +145,17 @@ export default {
     transition: opacity 1s;
 }
 
-.card-1:hover .top-image {
-    opacity: 1;
-}
-
 .card-1 {
     position: relative;
+
+    &:hover .top-image {
+        opacity: 1;
+    }
 }
 
 .brand {
     color: $brand-colour;
+
 }
 
 .price {
