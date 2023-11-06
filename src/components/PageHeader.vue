@@ -51,8 +51,6 @@ header {
 
 .col-4 {
   flex-basis: calc((100% / 12) * 4);
-  /* flex-basis: calc((100% * 2) / 12); */
-  /* border: 1px dashed black; */
 }
 
 ul li {
