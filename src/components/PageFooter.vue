@@ -25,8 +25,8 @@ export default {
                 </div>
                 <div class="col-6">
                     <div class="footer-text-2">
-                        <strong>Trovaci anche su</strong>
-                        <img src="./img/Senza titolo-1.png" alt="">
+                        <p>Trovaci anche su</p>
+                        <img src="../assets/Senza titolo-1.png" alt="">
                     </div>
                 </div>
             </div>
@@ -35,8 +35,10 @@ export default {
 </template>
 
 <style lang="scss" scoped>
+@use '../styles/parstials/variables' as *;
+
 footer {
-    background-color: #1a1a1a;
+    background-color: $footer-bg-colour;
     height: 110px;
     width: 100%;
     /* position: sticky;
@@ -59,12 +61,12 @@ footer {
 }
 
 .footer-text {
-    color: white;
+    color: $white-colour;
     line-height: 25px;
 }
 
 .footer-text-2 {
-    color: white;
+    color: $white-colour;
     line-height: 25px;
     text-align: right;
 }
