@@ -41,12 +41,6 @@ header {
   top: 0;
 }
 
-
-.row {
-  display: flex;
-  flex-wrap: wrap;
-}
-
 .nav-row {
   justify-content: space-between;
   padding: 10px;
