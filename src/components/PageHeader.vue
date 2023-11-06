@@ -3,7 +3,7 @@
 export default {
   data() {
     return {
-
+      category: ['Donna', 'Uomo', 'Bambini']
     }
   }
 
@@ -17,10 +17,8 @@ export default {
     <nav class="container">
       <div class="row nav-row">
         <div class="col-4">
-          <ul>
-            <li><a href="#">Donna</a></li>
-            <li><a href="#">Uomo</a></li>
-            <li><a href="#">Bambini</a></li>
+          <ul class="category">
+            <li v-for="(item, i9) in category"><a href="#">{{ item }}</a></li>
           </ul>
         </div>
         <div class="col-4"><img class="boolean-logo" src="../assets/boolean-logo.png" alt=""></div>
@@ -54,13 +52,14 @@ header {
 }
 
 ul li {
-  list-style: none;
-  display: inline;
   color: $white-colour;
   font-weight: bold;
-  padding-bottom: 10px;
 }
 
+.category {
+  display: flex;
+  gap: 10px;
+}
 
 .boolean-logo {
   max-width: 50%;
