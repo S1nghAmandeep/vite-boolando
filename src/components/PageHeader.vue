@@ -31,8 +31,10 @@ export default {
 </template>
 
 <style lang="scss" scoped>
+@use '../styles/parstials/variables' as *;
+
 header {
-  background-color: #ff6900;
+  background-color: $header-bg-colour;
   height: 60px;
   width: 100%;
   position: sticky;
@@ -56,7 +58,7 @@ header {
 ul li {
   list-style: none;
   display: inline;
-  color: white;
+  color: $white-colour;
   font-weight: bold;
   padding-bottom: 10px;
 }
