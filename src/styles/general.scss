@@ -22,6 +22,16 @@ ol {
     list-style: none;
 }
 
+a {
+    color: currentColor;
+    text-decoration: none;
+}
+
 .row>[class^='col--'] {
     padding: 20px;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
 }
