@@ -133,6 +133,8 @@ export default {
 </template>
 
 <style lang="scss" scoped>
+@use '../styles/parstials/variables' as *;
+
 .col--4 {
     flex-basis: calc((100% / 12) * 4);
     /* border: 1px dashed black; */
@@ -153,11 +155,11 @@ export default {
 }
 
 .brand {
-    color: rgb(146, 146, 146);
+    color: $brand-colour;
 }
 
 .price {
-    color: red;
+    color: $red-colour;
     display: inline-block;
     font-weight: bold;
 }
@@ -167,8 +169,8 @@ export default {
 }
 
 .discount {
-    background-color: red;
-    color: white;
+    background-color: $red-colour;
+    color: $white-colour;
     padding: 5px 10px;
     font-weight: bold;
     position: absolute;
@@ -177,8 +179,8 @@ export default {
 }
 
 .sustainable {
-    background-color: green;
-    color: white;
+    background-color: $green-colour;
+    color: $white-colour;
     padding: 5px 10px;
     font-weight: bold;
     position: absolute;
@@ -189,7 +191,7 @@ export default {
 .heart {
     padding: 5px 14px;
     font-size: 30px;
-    background-color: white;
+    background-color: $white-colour;
     position: absolute;
     right: 0;
     top: 10px;
@@ -198,9 +200,9 @@ export default {
 .heart-red {
     padding: 5px 14px;
     font-size: 30px;
-    background-color: white;
+    background-color: $white-colour;
     position: absolute;
-    color: red;
+    color: $red-colour;
     right: 0;
     top: 10px;
     opacity: 0;
