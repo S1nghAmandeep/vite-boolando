@@ -5,13 +5,18 @@ export default {
             type: Object,
             required: true
         }
+    },
+    methods: {
+        getImagePath(imgPath) {
+            return new URL(imgPath, import.meta.url).href;
+        }
     }
 }
 </script>
 
 <template>
     <div class="card-1">
-        <img class="top-image" :src="items.backImage" alt="">
+        <img class="top-image" :src="getImagePath(`../assets/${items.backImage}`)" alt="">
         <img class="clothe-image" :src="items.frontImage" alt="t-shirt">
         <p class="brand">{{ items.brand }}</p>
         <strong>{{ items.name }}</strong>
