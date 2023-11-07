@@ -3,6 +3,7 @@ export default {
     props: {
         items: {
             type: Object,
+            required: true
         }
     }
 }
@@ -15,8 +16,9 @@ export default {
         <p class="brand">{{ items.brand }}</p>
         <strong>{{ items.name }}</strong>
         <span class="price"> &euro;{{ items.price }}</span>
-        <div v-for="dis in items.badges" :class="dis.value === 'Sostenibilità' ? 'sustainable' : ''" class="discount">
-            <span>
+        <div class="discount">
+            <span v-for="(dis, index) in items.badges" :key="index"
+                :class="dis.value === 'Sostenibilità' ? 'sustainable' : 'bg-red'">
                 {{ dis.value }}
             </span>
         </div>
@@ -61,20 +63,26 @@ export default {
 }
 
 .discount {
-    background-color: $red-colour;
     color: $white-colour;
-    padding: 5px 10px;
     font-weight: bold;
     position: absolute;
     left: 0;
     bottom: 100px;
     display: flex;
-}
+    flex-direction: row-reverse;
+    align-items: center;
 
-.sustainable {
-    background-color: $green-colour;
-    color: $white-colour;
-    padding: 5px 10px;
+    .sustainable {
+        background-color: $green-colour;
+        color: $white-colour;
+        padding: 5px 10px;
+    }
+
+    .bg-red {
+        background-color: $red-colour;
+        color: $white-colour;
+        padding: 5px 10px;
+    }
 }
 
 .heart {
