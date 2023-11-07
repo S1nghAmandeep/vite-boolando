@@ -15,11 +15,13 @@ export default {
         <p class="brand">{{ items.brand }}</p>
         <strong>{{ items.name }}</strong>
         <span class="price"> &euro;{{ items.price }}</span>
-        <span v-for="dis in items.badges" class="discount">{{ dis.value }}</span>
-        <span class="sustainable">Sostenibilità</span>
+        <div v-for="dis in items.badges" :class="dis.value === 'Sostenibilità' ? 'sustainable' : ''" class="discount">
+            <span>
+                {{ dis.value }}
+            </span>
+        </div>
         <div class="red">
-            <span class="heart">&hearts;</span>
-            <span class="heart-red">&hearts;</span>
+            <span :class="items.isInFavorites ? 'heart-red' : 'heart'">&hearts;</span>
         </div>
     </div>
 </template>
@@ -66,16 +68,13 @@ export default {
     position: absolute;
     left: 0;
     bottom: 100px;
+    display: flex;
 }
 
 .sustainable {
     background-color: $green-colour;
     color: $white-colour;
     padding: 5px 10px;
-    font-weight: bold;
-    position: absolute;
-    left: 60px;
-    bottom: 100px;
 }
 
 .heart {
@@ -95,19 +94,9 @@ export default {
     color: $red-colour;
     right: 0;
     top: 10px;
-    opacity: 0;
-}
-
-.red:hover .heart-red {
-    opacity: 1;
-    transition: opacity 500ms;
 }
 
 strong {
     display: block;
-}
-
-.sustainable.six {
-    left: 0px;
 }
 </style>
