@@ -1,10 +1,16 @@
 <script>
+import cards from '../db.json'
+
 
 export default {
     data() {
         return {
-
+            products: cards.products
         }
+    },
+
+    mounted() {
+        console.log(this.products);
     }
 
 }
