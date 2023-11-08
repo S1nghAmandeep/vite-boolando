@@ -25,7 +25,7 @@ export default {
     <main>
         <div class="container">
             <div class="row">
-                <div class="col--4" v-for="(item, i) in products" :key="i">
+                <div class="col--4" v-for="(item, i) in products" :key="item.id">
                     <MainCards :items="item" />
                 </div>
             </div>
