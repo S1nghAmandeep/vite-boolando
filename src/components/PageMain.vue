@@ -10,12 +10,12 @@ export default {
     },
     data() {
         return {
-            products: store.products
+            store,
         }
     },
 
     mounted() {
-        console.log(this.products);
+        // console.log(this.products);
     }
 
 }
@@ -26,7 +26,7 @@ export default {
     <main>
         <div class="container">
             <div class="row">
-                <div class="col--4" v-for="(item, i) in products" :key="item.id">
+                <div class="col--4" v-for="(item, i) in store.products" :key="item.id">
                     <MainCards :items="item" />
                 </div>
             </div>
