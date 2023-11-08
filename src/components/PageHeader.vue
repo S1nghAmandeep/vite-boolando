@@ -3,7 +3,8 @@
 export default {
   data() {
     return {
-      category: ['Donna', 'Uomo', 'Bambini']
+      category: ['Donna', 'Uomo', 'Bambini'],
+      icons: [['far', 'user'], ['far', 'heart'], ['fas', 'bag-shopping']]
     }
   }
 
@@ -18,11 +19,17 @@ export default {
       <div class="row nav-row">
         <div class="col-4">
           <ul class="category">
-            <li v-for="(item, i9) in category"><a href="#">{{ item }}</a></li>
+            <li v-for="(item, i) in category"><a href="#">{{ item }}</a></li>
           </ul>
         </div>
         <div class="col-4"><img class="boolean-logo" src="../assets/boolean-logo.png" alt=""></div>
-        <div class="col-4"><img class="header-icon" src="../assets/accedi-img.png" alt=""></div>
+        <div class="col-4">
+          <ul class="icons">
+            <li v-for="(icon, i) in icons">
+              <font-awesome-icon :icon="icon" bounce />
+            </li>
+          </ul>
+        </div>
       </div>
     </nav>
   </header>
@@ -66,7 +73,9 @@ ul li {
   margin: 3px 0 0 80px;
 }
 
-.header-icon {
-  margin: 7px 0 0 214px;
+.icons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px
 }
 </style>
