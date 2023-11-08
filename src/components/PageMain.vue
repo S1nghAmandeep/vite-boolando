@@ -1,6 +1,7 @@
 <script>
-import cards from '../db.json'
+// import cards from '../db.json'
 import MainCards from '../components/MainCards.vue'
+import { store } from '../store'
 
 
 export default {
@@ -9,7 +10,7 @@ export default {
     },
     data() {
         return {
-            products: cards.products
+            products: store.products
         }
     },
 
