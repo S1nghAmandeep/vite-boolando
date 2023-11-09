@@ -13,15 +13,32 @@ export default {
             store,
             active: false,
             items: '',
+            dis: '',
+            green: '',
         }
     },
     methods: {
         showModal(products) {
             this.active = true;
             this.items = products
+            // this.items.badges.forEach(element => {
+            //     this.dis = element.value
+            // });
+            for (let index = 0; index < this.items.badges.length; index++) {
+                const element = this.items.badges[index];
+                if (element.type === "tag") {
+                    this.green = element.value
+                } else {
+                    this.dis = element.value
+                }
+
+            }
         },
         closeModal() {
             this.active = false;
+            this.items = ''
+            this.dis = 0
+            this.green = ''
         }
     }
 
@@ -48,10 +65,14 @@ export default {
                         <p> {{ items.brand }} </p>
                         <p> {{ items.name }} </p>
                         <p> &euro; {{ items.price }} </p>
+                        <p> sconto {{ dis }} </p>
+                        <p> {{ green }} </p>
                     </div>
                 </div>
                 <div>
-                    <span @click="closeModal"><font-awesome-icon icon="fa-regular fa-circle-xmark" /></span>
+                    <span @click="closeModal">
+                        <font-awesome-icon icon="fa-regular fa-circle-xmark" size="xl" />
+                    </span>
                 </div>
             </div>
         </div>
