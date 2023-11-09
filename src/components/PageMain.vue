@@ -11,11 +11,16 @@ export default {
     data() {
         return {
             store,
+            active: false,
         }
     },
-
-    mounted() {
-        // console.log(this.products);
+    methods: {
+        showModal() {
+            this.active = true;
+        },
+        closeModal() {
+            this.active = false;
+        }
     }
 
 }
@@ -27,8 +32,14 @@ export default {
         <div class="container">
             <div class="row">
                 <div class="col--4" v-for="(item, i) in store.products" :key="item.id">
-                    <MainCards :items="item" />
+                    <MainCards @show="showModal" :items="item" />
                 </div>
+            </div>
+        </div>
+        <div>
+            <div v-if="active" class="card">
+                <p>ciao come stai</p>
+                <span @click="closeModal"><font-awesome-icon icon="fa-regular fa-circle-xmark" /></span>
             </div>
         </div>
     </main>
@@ -37,5 +48,21 @@ export default {
 <style lang="scss" scoped>
 .col--4 {
     flex-basis: calc((100% / 12) * 4);
+}
+
+.card {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% -50%);
+    background-color: white;
+    box-shadow: 0px 0px 10px 2px #888888;
+    max-width: 300px;
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 10px;
 }
 </style>
