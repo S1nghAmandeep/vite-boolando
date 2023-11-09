@@ -12,11 +12,13 @@ export default {
         return {
             store,
             active: false,
+            itemName: '',
         }
     },
     methods: {
-        showModal() {
+        showModal(products) {
             this.active = true;
+            this.itemName = products.name
         },
         closeModal() {
             this.active = false;
@@ -38,7 +40,7 @@ export default {
         </div>
         <div>
             <div v-if="active" class="card">
-                <p>ciao come stai</p>
+                <p>{{ itemName }}</p>
                 <span @click="closeModal"><font-awesome-icon icon="fa-regular fa-circle-xmark" /></span>
             </div>
         </div>
