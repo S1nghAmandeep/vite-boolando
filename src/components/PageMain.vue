@@ -62,8 +62,8 @@ export default {
                         <img class="imgModal" :src="items.frontImage" alt="">
                     </figure>
                     <div>
-                        <p> {{ items.brand }} </p>
-                        <p> {{ items.name }} </p>
+                        <p> Marca: {{ items.brand }} </p>
+                        <p> Nome: {{ items.name }} </p>
                         <p> &euro; {{ items.price }} </p>
                         <p> sconto {{ dis }} </p>
                         <p> {{ green }} </p>
@@ -121,7 +121,7 @@ export default {
         padding: 10px;
         font-weight: bold;
         gap: 10px;
-        font-size: 25px;
+        font-size: 20px;
 
         .imgModal {
             display: block;
