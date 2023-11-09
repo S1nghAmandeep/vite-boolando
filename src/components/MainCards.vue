@@ -37,7 +37,7 @@ export default {
         <img class="top-image" :src="getImagePath(`../assets/${items.backImage}`)" alt="">
         <img class="clothe-image" :src="items.frontImage" alt="t-shirt">
         <p class="brand">{{ items.brand }}</p>
-        <strong @click="$emit('show', items)">
+        <strong class="item-name" @click="$emit('show', items)">
             {{ items.name }}
         </strong>
         <span class="price">&euro;
@@ -136,5 +136,9 @@ export default {
 
 strong {
     display: block;
+}
+
+.item-name {
+    cursor: pointer;
 }
 </style>
