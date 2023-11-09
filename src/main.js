@@ -9,11 +9,11 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 /* import font awesome icon component */
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
-import { faHeart, faUser } from '@fortawesome/free-regular-svg-icons'
+import { faHeart, faUser, faCircleXmark } from '@fortawesome/free-regular-svg-icons'
 import { faBagShopping } from '@fortawesome/free-solid-svg-icons'
 
 
-library.add(faHeart, faUser, faBagShopping);
+library.add(faHeart, faUser, faBagShopping, faCircleXmark);
 
 createApp(App)
     .component('font-awesome-icon', FontAwesomeIcon)
