@@ -9,7 +9,25 @@ export default {
     methods: {
         getImagePath(imgPath) {
             return new URL(imgPath, import.meta.url).href;
-        }
+        },
+
+        // getDiscount(price, discount) {
+
+        //     let disNum
+        //     for (let index = 0; index < discount.length; index++) {
+        //         const element = discount[index]
+        //         // console.log(element);
+        //         if (element.type === 'discount') {
+        //             disNum = element.value
+        //         }
+        //     }
+        //     console.log(disNum);
+
+        //     const finalPrice = ((price * parseInt(disNum)) / 100) * -1
+        //     // console.log(finalPrice);
+        //     return finalPrice.toFixed(2)
+        // }
+
     }
 }
 </script>
@@ -19,8 +37,15 @@ export default {
         <img class="top-image" :src="getImagePath(`../assets/${items.backImage}`)" alt="">
         <img class="clothe-image" :src="items.frontImage" alt="t-shirt">
         <p class="brand">{{ items.brand }}</p>
-        <strong>{{ items.name }}</strong>
-        <span class="price"> &euro;{{ items.price }}</span>
+        <strong @click="$emit('show')">
+            {{ items.name }}
+        </strong>
+        <span class="price">&euro;
+            {{ items.price }}
+        </span>
+        <!-- <span class="old-price">
+            {{ items.price }}
+        </span> -->
         <div class="discount">
             <span v-for="(dis, index) in items.badges" :key="index"
                 :class="dis.value === 'Sostenibilità' ? 'sustainable' : 'bg-red'">
