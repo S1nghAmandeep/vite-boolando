@@ -12,13 +12,13 @@ export default {
         return {
             store,
             active: false,
-            itemName: '',
+            items: '',
         }
     },
     methods: {
         showModal(products) {
             this.active = true;
-            this.itemName = products.name
+            this.items = products
         },
         closeModal() {
             this.active = false;
@@ -40,8 +40,19 @@ export default {
         </div>
         <div>
             <div v-if="active" class="card">
-                <p>{{ itemName }}</p>
-                <span @click="closeModal"><font-awesome-icon icon="fa-regular fa-circle-xmark" /></span>
+                <div class="card__body">
+                    <figure>
+                        <img class="imgModal" :src="items.frontImage" alt="">
+                    </figure>
+                    <div>
+                        <p> {{ items.brand }} </p>
+                        <p> {{ items.name }} </p>
+                        <p> &euro; {{ items.price }} </p>
+                    </div>
+                </div>
+                <div>
+                    <span @click="closeModal"><font-awesome-icon icon="fa-regular fa-circle-xmark" /></span>
+                </div>
             </div>
         </div>
     </main>
@@ -56,15 +67,36 @@ export default {
     position: fixed;
     top: 50%;
     left: 50%;
-    transform: translate(-50% -50%);
+    transform: translate(-50%);
     background-color: white;
     box-shadow: 0px 0px 10px 2px #888888;
-    max-width: 300px;
+    max-width: 450px;
     width: 100%;
-    height: 80px;
+    height: 200px;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-around;
+    padding: 10px;
     align-items: center;
     border-radius: 10px;
+
+    .card__body {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-grow: 1;
+        overflow: hidden;
+        padding: 10px;
+        font-weight: bold;
+        gap: 10px;
+
+        .imgModal {
+            display: block;
+            width: 100px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px 2px #888888;
+
+        }
+    }
 }
 </style>
